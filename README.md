@@ -24,7 +24,10 @@ secção [Colaboração](#colab).
 
 ## Conteúdos
 
-1. a definir
+1.  [Git em projetos com _assets_ binários](problemas/01.md)
+2.  [Revisão de C#](problemas/02.md)
+3.  [Estruturas de Dados / Coleções](problemas/03.md)
+4.  _em breve_
 
 <a name="colab" />
 
