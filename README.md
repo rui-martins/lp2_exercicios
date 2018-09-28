@@ -25,7 +25,7 @@ secção [Colaboração](#colab).
 ## Conteúdos
 
 1.  [Git em projetos com _assets_ binários](problemas/01.md)
-2.  [Revisão de C#](problemas/02.md)
+2.  [Revisão de C# e UML](problemas/02.md)
 3.  [Estruturas de Dados / Coleções](problemas/03.md)
 4.  _em breve_
 
@@ -63,80 +63,82 @@ por ai fora.
 
 #### Primeira colaboração
 
-1. Cria uma cópia (*fork*) deste repositório (tipicamente denominado
-_upstream_) na tua conta do GitHub (botão **Fork** no canto superior direito).
-A cópia do repositório na tua conta é geralmente chamada _origin_.
-2. Obtém uma cópia local (no teu PC) do repositório _origin_ com o comando
-`git clone https://github.com/OTeuUserName/lp1_exercicios.git` (substituir
-`OTeuUserName` pelo teu nome de utilizador no GitHub).
-3. Dar conhecimento ao teu repositório local da existência do repositório
-remoto _upstream_ com o comando
-`git remote add upstream https://github.com/VideojogosLusofona/lp1_exercicios.git`.
+1.  Cria uma cópia (_fork_) deste repositório (tipicamente denominado
+    _upstream_) na tua conta do GitHub (botão **Fork** no canto superior
+    direito). A cópia do repositório na tua conta é geralmente chamada
+    _origin_.
+2.  Obtém uma cópia local (no teu PC) do repositório _origin_ com o comando
+    `git clone https://github.com/OTeuUserName/lp2_exercicios.git` (substituir
+    `OTeuUserName` pelo teu nome de utilizador no GitHub).
+3.  Dar conhecimento ao teu repositório local da existência do repositório
+    remoto _upstream_ com o comando
+    `git remote add upstream https://github.com/VideojogosLusofona/lp2_exercicios.git`.
 
 <a name="colabseg" />
 
 #### Colaborações seguintes
 
-1. No teu repositório local, certifica-te que estás no ramo _master_:
-    - `$ git checkout master`
-2. Descarrega as novidades do repositório _upstream_ e junta-as (_merge_) ao
-teu ramo _master_:
-    - `$ git fetch upstream`
-    - `$ git merge upstream/master`
-3. Carrega (_push_) as novidades do _upstream_ para o repositório _origin_:
-    - `$ git push origin master`
+1.  No teu repositório local, certifica-te que estás no ramo _master_:
+    -   `$ git checkout master`
+2.  Descarrega as novidades do repositório _upstream_ e junta-as (_merge_) ao
+    teu ramo _master_:
+    -   `$ git fetch upstream`
+    -   `$ git merge upstream/master`
+3.  Carrega (_push_) as novidades do _upstream_ para o repositório _origin_:
+    -   `$ git push origin master`
 
 ### Efetuar alterações e solicitar integração
 
-1. Dentro da pasta dos exercícios, chamada *lp1_exercicios*, cria um ramo
-(_branch_) para inserires as tuas novas propostas:
-    - `$ git branch meu_ramo`
-    - `$ git checkout meu_ramo`
-    - O nome `meu_ramo` pode ser substituído por qualquer outro nome.
-    - O primeiro comando cria o ramo, o segundo comando muda o git para esse
-      ramo. Os dois comandos podem ser compactados num só:
-      `$ git checkout -b meu_ramo`.
-2. Uma vez no novo ramo, faz as alterações/propostas às soluções e/ou aos
-exercícios. Cada alteração/proposta deve ser especificada com pelo menos um
-_commit_:
-    - `$ git add nome_dos_ficheiros_alterados`
-    - `$ git commit -m "Descrição das alterações efetuadas"`
-3. O `novo_ramo` deve ser carregado (_pushed_) para o repositório _origin_ (ou
-seja, para o *fork* que criaste no GitHub):
-    - `$ git push -u origin meu_ramo`
-    - A opção `-u` é necessária pois nesta fase o teu repositório no GitHub
-      (_origin_) ainda não conhece o ramo chamado `meu_ramo`.
-4. Uma vez confirmado que o _push_ foi realizado com sucesso, deve ser
-solicitado um *pull request* (pedido de integração) na árvore original dos
-exercícios (_upstream_). Para o efeito basta clicar no botão
-**New pull request** e solicitar a seguinte integração:
-    - _Base fork_ **VideojogosLusofona/lp1_exercicios**, _base_ **master**
+1.  Dentro da pasta dos exercícios, chamada _lp2_exercicios_, cria um ramo
+    (_branch_) para inserires as tuas novas propostas:
+    -   `$ git branch meu_ramo`
+    -   `$ git checkout meu_ramo`
+    -   O nome `meu_ramo` pode ser substituído por qualquer outro nome.
+    -   O primeiro comando cria o ramo, o segundo comando muda o git para esse
+        ramo. Os dois comandos podem ser compactados num só:
+        `$ git checkout -b meu_ramo`.
+2.  Uma vez no novo ramo, faz as alterações/propostas às soluções e/ou aos
+    exercícios. Cada alteração/proposta deve ser especificada com pelo menos um
+    _commit_:
+    -   `$ git add nome_dos_ficheiros_alterados`
+    -   `$ git commit -m "Descrição das alterações efetuadas"`
+3.  O `novo_ramo` deve ser carregado (_pushed_) para o repositório _origin_ (ou
+    seja, para o _fork_ que criaste no GitHub):
+    -   `$ git push -u origin meu_ramo`
+    -   A opção `-u` é necessária pois nesta fase o teu repositório no GitHub
+        (_origin_) ainda não conhece o ramo chamado `meu_ramo`.
+4.  Uma vez confirmado que o _push_ foi realizado com sucesso, deve ser
+    solicitado um _pull request_ (pedido de integração) na árvore original dos
+    exercícios (_upstream_). Para o efeito basta clicar no botão
+    **New pull request** e solicitar a seguinte integração:
+    -   _Base fork_ **VideojogosLusofona/lp2_exercicios**, _base_ **master**
     (local onde queres integrar as tuas alterações).
-    - _Head fork_ **OTeuUserName/lp1_exercicios**, _compare_ **meu_ramo** (as
+    -   _Head fork_ **OTeuUserName/lp2_exercicios**, _compare_ **meu_ramo** (as
     tuas alterações que queres ver integradas).
-    - Clica no botão verde **Create pull request**, e deixa uma pequena
-    descrição da razão do pedido de integração, clicando depois novamente em
-    **Create pull request**.
-5. Caso o _pull request_ não tenha sido aceite, volta ao ponto 2.
-6. Caso o _pull request_ tenha sido aceite, podes seguir os passos indicados
-em [Colaborações seguintes](#colabseg), de modo a juntares as alterações que
-propuseste ao teu ramo `master`. Posteriormente podes eliminar o `meu_ramo`
-localmente e remotamente (_origin_) com os seguintes comandos:
-    - `$ git branch -d meu_ramo`
-    - `$ git push origin :meu_ramo`
+    -   Clica no botão verde **Create pull request**, e deixa uma pequena
+        descrição da razão do pedido de integração, clicando depois novamente
+        em **Create pull request**.
+5.  Caso o _pull request_ não tenha sido aceite, volta ao ponto 2.
+6.  Caso o _pull request_ tenha sido aceite, podes seguir os passos indicados
+    em [Colaborações seguintes](#colabseg), de modo a juntares as alterações
+    que propuseste ao teu ramo `master`. Posteriormente podes eliminar o
+    `meu_ramo` localmente e remotamente (_origin_) com os seguintes comandos:
+    -   `$ git branch -d meu_ramo`
+    -   `$ git push origin :meu_ramo`
 
 ## Licenças
 
-Estes exercícios são disponibilizados através da licença [CC BY-NC-SA 4.0].
-O código associado aos exercícios é disponibilizado através da licença [GPLv3].
+Estes exercícios são disponibilizados através da licença [CC BY-NC-SA 4.0][].
+O código associado aos exercícios é disponibilizado através da licença
+[GPLv3][].
 
 ## Metadados
 
-* Autor: [Nuno Fachada]
-* Colaboradores:
-  De preferência, muitos
-* Curso: [Licenciatura em Videojogos][lv]
-* Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
+*   Autor: [Nuno Fachada][]
+*   Colaboradores:
+    De preferência, muitos
+*   Curso: [Licenciatura em Videojogos][lv]
+*   Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
 
 [GPLv3]:https://www.gnu.org/licenses/gpl-3.0.en.html
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
