@@ -17,6 +17,8 @@ namespace LP1_Exercises
         {
             TestArrayOfStructs taos = new TestArrayOfStructs();
             taos.PerformTest();
+
+            Console.ReadKey();
         }
 
         /// <summary>
