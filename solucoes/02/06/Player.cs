@@ -8,15 +8,15 @@ namespace _03
     {
 
         /// <summary>
-        /// Criação de variáveis de instância.
+        /// Declaração de variáveis de instância.
         /// </summary>
         readonly private double hp;
         readonly private string name;
 
         /// <summary>
-        /// Criação de variável de classe só de leitura
+        /// Declaração de variável de classe só de leitura
         /// </summary>
-        private static int numberOfWeapons = 2;
+        private readonly int numberOfWeapons = 2;
 
         /// <summary>
         /// Propriedade (de instância) só de leitura.
@@ -30,7 +30,7 @@ namespace _03
 
 
         /// <summary>
-        /// Constructor que inicializa as variáveis relevantes.
+        /// Construtor que inicializa as variáveis relevantes.
         /// </summary>
         /// <param name="name">Indica o nome do jogador</param>
         /// <param name="hp">é escolhido o hp do jogador sendo o 
