@@ -7,7 +7,7 @@ namespace _03
         static void Main(string[] args)
         {
             //Cria o jogador indicando o nome e hp
-            Player jogador1 = new Player("Joao", 100);
+            Player jogador1 = new Player("Joao", 100, 0);
 
             //Testa o programa
             Console.WriteLine("Player 1: " + jogador1.GetName());

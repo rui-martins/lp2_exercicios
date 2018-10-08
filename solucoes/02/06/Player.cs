@@ -10,8 +10,8 @@ namespace _03
         /// <summary>
         /// Declaração de variáveis de instância.
         /// </summary>
-         private readonly double hp;
-         private readonly string name;
+        private readonly double hp;
+        private readonly string name;
 
         /// <summary>
         /// Declaração de variável de classe só de leitura
@@ -33,8 +33,9 @@ namespace _03
         /// Construtor que inicializa as variáveis relevantes.
         /// </summary>
         /// <param name="name">Indica o nome do jogador</param>
-        /// <param name="hp">é escolhido o hp do jogador sendo o 
+        /// <param name="hp">É escolhido o hp do jogador sendo o 
         /// máximo 100</param>
+        /// <param name="score">Indica o score do jogador</param>
         public Player(string name, double hp, int score)
         {
             this.name = name;
