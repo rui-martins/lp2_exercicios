@@ -10,13 +10,13 @@ namespace _03
         /// <summary>
         /// Declaração de variáveis de instância.
         /// </summary>
-        readonly private double hp;
-        readonly private string name;
+         private readonly double hp;
+         private readonly string name;
 
         /// <summary>
         /// Declaração de variável de classe só de leitura
         /// </summary>
-        private readonly int numberOfWeapons = 2;
+        private readonly static int numberOfWeapons = 2;
 
         /// <summary>
         /// Propriedade (de instância) só de leitura.
@@ -35,10 +35,11 @@ namespace _03
         /// <param name="name">Indica o nome do jogador</param>
         /// <param name="hp">é escolhido o hp do jogador sendo o 
         /// máximo 100</param>
-        public Player(string name, double hp)
+        public Player(string name, double hp, int score)
         {
             this.name = name;
             this.hp = hp;
+            this.Score = score;
         }
 
         /// <summary>
