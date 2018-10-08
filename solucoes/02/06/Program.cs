@@ -6,10 +6,10 @@ namespace _03
     {
         static void Main(string[] args)
         {
-            //Cria o jogador indicando o nome e hp
+            ///Cria o jogador indicando o nome, hp e score inicial
             Player jogador1 = new Player("Joao", 100, 0);
 
-            //Testa o programa
+            ///Testa o programa
             Console.WriteLine("Player 1: " + jogador1.GetName());
         }
     }
