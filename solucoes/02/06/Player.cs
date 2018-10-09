@@ -8,7 +8,7 @@ namespace _03
     {
 
         /// <summary>
-        /// Declaração de variáveis de instância.
+        /// Declaração de variáveis de instância só de leitura.
         /// </summary>
         private readonly double hp;
         private readonly string name;
@@ -33,8 +33,7 @@ namespace _03
         /// Construtor que inicializa as variáveis relevantes.
         /// </summary>
         /// <param name="name">Indica o nome do jogador</param>
-        /// <param name="hp">É escolhido o hp do jogador sendo o 
-        /// máximo 100</param>
+        /// <param name="hp">HP do jogador, máximo 100</param>
         /// <param name="score">Indica o score do jogador</param>
         public Player(string name, double hp, int score)
         {
@@ -46,7 +45,7 @@ namespace _03
         /// <summary>
         /// Método apenas para testar o programa na class Program.cs
         /// </summary>
-        /// <returns></returns>
+        /// <returns>O nome do jogador</returns>
         public string GetName()
         {
             return name;
