@@ -66,14 +66,14 @@ namespace _12
                             results.Add(game);
                         }
                     }
-
-                    // Adicionar resultados não repetidos ao dicionário
-                    if (!dicGames.ContainsKey(searchString))
-                        dicGames.Add(searchString, results);
                 }
 
                 // Parar o cronómetro
                 stopwatch.Stop();
+
+                // Adicionar resultados não repetidos ao dicionário
+                if (!dicGames.ContainsKey(searchString))
+                    dicGames.Add(searchString, results);
 
                 // Mostrar quantos resultados foram obtidos e o tempo que 
                 // demorou a fazer a pesquisa da mesma
@@ -95,9 +95,9 @@ namespace _12
                             Console.WriteLine($"Games from the search " +
                                 $"{searchString} : ");
 
-                            // Procura todos os jogos dentro do value do 
-                            // dicionário com a key introduzida pelo utilizador
-                            foreach (string game in dicGames.GetValueOrDefault(searchString))
+                            // Procura todos os jogos dentro da coleção de 
+                            // strings e escreve-os.
+                            foreach (string game in results)
                             {
                                 Console.WriteLine(game);
                             }
