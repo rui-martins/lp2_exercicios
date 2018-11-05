@@ -11,7 +11,7 @@ namespace _12
         {
 
             // Abrir ficheiro com nomes os de jogos e colocar num array de strings
-            string[] games = File.ReadAllLines("./list_of_every_video_game_ever_(v2");
+            string[] games = File.ReadAllLines("videogames.txt");
 
             // Dicionário onde vai ser colocado os resultados da pesquisa
             Dictionary<string, ICollection<string>> dicGames = 
