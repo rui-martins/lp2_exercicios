@@ -27,7 +27,7 @@ namespace _12
                 string searchString;
 
                 // Resultados da procura, têm de ser enumeráveis e contáveis
-                ICollection<string> results = new List<string>();
+                ICollection<string> results;
 
                 // Solicitar string de procura, transformar em minúsculas para
                 // facilitar comparação mais à frente
@@ -41,19 +41,17 @@ namespace _12
                 // mostra o resultado contido no dicionário.
                 if (dicGames.ContainsKey(searchString))
                 {
-                    // Parar o cronómetro
-                    stopwatch.Stop();
+                    // Atribuir o valor contigo na key do dicionário ao 
+                    // resultado
+                    results = dicGames[searchString];
 
-                    // Mostrar resultados da procura no dicionário
-                    Console.WriteLine("Dictionary Time: ");
-                    Console.WriteLine($"Time to find " +
-                        $"{dicGames.GetValueOrDefault(searchString).Count} " +
-                        $"games was " +
-                        $"{stopwatch.Elapsed}");
                 }
                 // Caso contrario faz a pesquisa no array de strings
                 else
                 {
+                    // Criar uma nova lista para colocar os resultados
+                    results = new List<string>();
+
                     // Procura no array de strings se há contido a searchString
                     foreach (string game in games)
                     {
@@ -72,15 +70,15 @@ namespace _12
                     // Adicionar resultados não repetidos ao dicionário
                     if (!dicGames.ContainsKey(searchString))
                         dicGames.Add(searchString, results);
-
-                    // Parar o cronómetro
-                    stopwatch.Stop();
-
-                    // Mostrar resultados da procura no array
-                    Console.WriteLine("Array Time: ");
-                    Console.WriteLine($"Time to find {results.Count} games " +
-                        $"was {stopwatch.Elapsed}");
                 }
+
+                // Parar o cronómetro
+                stopwatch.Stop();
+
+                // Mostrar quantos resultados foram obtidos e o tempo que 
+                // demorou a fazer a pesquisa da mesma
+                Console.WriteLine($"Time to find {results.Count} games " +
+                        $"was {stopwatch.Elapsed}");
 
                 // Pergunta e mostra todos os jogos relacionados com a pesquisa
                 Console.WriteLine("Do you wish to see a list of the games " +
