@@ -27,7 +27,7 @@ secção [Colaboração](#colab).
 1.  [Git em projetos com _assets_ binários](problemas/01.md)
 2.  [Revisão de C# e UML](problemas/02.md)
 3.  [Estruturas de Dados / Coleções](problemas/03.md)
-4.  _em breve_
+4.  [C# avançado e _design patterns_](problemas/04.md)
 
 <a name="colab" />
 
