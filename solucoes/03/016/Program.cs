@@ -58,8 +58,14 @@ namespace _016
             {
                 Console.WriteLine(unit);
             }
-            Console.WriteLine(biggerGroup);
+            Console.WriteLine(biggerGroup + "\n\n");
 
+            // Verificar as posições do Group menor
+            foreach (IUnit unit in group)
+            {
+                Console.WriteLine(unit);
+            }
+            Console.WriteLine(group + "\n\n");
 
 
         }
