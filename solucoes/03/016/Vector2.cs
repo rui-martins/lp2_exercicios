@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _016
+﻿namespace _016
 {
     public struct Vector2
     {

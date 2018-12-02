@@ -19,7 +19,7 @@ namespace _016
             group.Add(tank);
 
             // Verificar as propriedades todas das unidades dentro do Group
-            foreach(IUnit unit in group)
+            foreach (IUnit unit in group)
             {
                 Console.WriteLine(unit);
             }
