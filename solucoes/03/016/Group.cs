@@ -6,18 +6,25 @@ namespace _016
 {
     public class Group : List<IUnit>, IUnit
     {
+        // Propriedade que indica o número total de todas as Units no Group e
+        // em sub-Groups
         public string UnitName
         {
             get
             {
                 int totalUnits = 0;
+
+                // Percorre todas as IUnit no Group
                 foreach (IUnit unit in this)
                 {
                     if (unit is Group)
                     {
+                        // Soma ao total a quantidade de Units contidas no
+                        // sub-Group
                         totalUnits += (unit as Group).Count;
                     }
                     else
+                        // Incrementa o total por cada Unit no Group
                         totalUnits++;
                 }
                 // Devolve o total das Units
@@ -25,29 +32,38 @@ namespace _016
             }
         }
 
+        // Propriedade que indica a Position central do Group
         public Vector2 Position
         {
             get
             {
-                float posX = 0f;
-                float posY = 0f;
+                float sumX = 0f;
+                float sumY = 0f;
+
+                // Percorre todas as IUnit's no Group
                 foreach (IUnit unit in this)
                 {
-                    posX += unit.Position.X;
-                    posY += unit.Position.Y;
+                    // Soma todas as posições das units
+                    sumX += unit.Position.X;
+                    sumY += unit.Position.Y;
                 }
+
                 // Devolve a centroide das Units
-                return new Vector2(posX / Count, posY / Count);
+                return new Vector2(sumX / Count, sumY / Count);
             }
         }
 
+        // Propriedade que indica a média da Health do Group
         public float Health
         {
             get
             {
                 float totalHealth = 0;
+
+                // Percorre todas as IUnit e soma ao total da Health
                 foreach (IUnit unit in this)
                     totalHealth += unit.Health;
+
                 // Devolve a média da Health
                 return totalHealth / Count;
 
@@ -56,33 +72,22 @@ namespace _016
 
         public Group() : base() { }
 
+
         public void Move(Vector2 newPosition)
         {
-            // Calcular o movimento dos vetores
+            // Calcula o movimento dos vetores
             Vector2 moveToPos = new Vector2(
                 (newPosition.X - Position.X),
                 (newPosition.Y - Position.Y));
 
+            // Verifica cada Unit no Group e move-as com o vetor da deslocação
             foreach (IUnit unit in this)
             {
-                if (unit is Group)
-                {
-                    // Mover os Groups contidos no Group
-                    foreach (Unit unitInGroup in (unit as Group))
-                    {
-                        unitInGroup.Position = new Vector2(
-                            unitInGroup.Position.X - moveToPos.X,
-                            unitInGroup.Position.Y - moveToPos.Y);
-                    }
-                }
-                else
-                {
-                    // Mover as Units contidas no Group
-                    (unit as Unit).Position = new Vector2(
-                        unit.Position.X - moveToPos.X,
-                        unit.Position.Y - moveToPos.Y);
-                }
-
+                // Move a Unit de acordo com a posição atual mais a atualização
+                // para onde tem de ir
+                unit.Move(new Vector2(
+                    unit.Position.X + moveToPos.X,
+                    unit.Position.Y + moveToPos.Y));
             }
         }
 
