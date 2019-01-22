@@ -135,18 +135,7 @@ O código associado aos exercícios é disponibilizado através da licença
 ## Metadados
 
 *   Autor: [Nuno Fachada][]
-*   Colaboradores:
-    [André Santos](https://github.com/Snigy24),
-    [Ianis Arquissandas](https://github.com/Insoel),
-    [Nuno Carriço](https://github.com/NunoCarrico98),
-    [Rui Martins](https://github.com/rui-martins),
-    [João Duarte](https://github.com/JoaoAlexandreDuarte),
-    [Leandro Brás](https://github.com/xShadoWalkeR),
-    [Pedro Santos](https://github.com/pedrosantosobral),
-    [Inês Gonçalves](https://github.com/ineesgoncalvees),
-    [Alejandro Urcera](https://github.com/aurceramartins),
-    [Diogo Martins](https://github.com/diogo-martins99),
-    [Joana Marques](https://github.com/joanamarques99)
+*   [Colaboradores](https://github.com/VideojogosLusofona/lp2_exercicios/graphs/contributors)
 *   Curso: [Licenciatura em Videojogos][lv]
 *   Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
 
