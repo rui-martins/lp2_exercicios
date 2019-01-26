@@ -12,19 +12,12 @@ namespace _02 {
 
         // Random variable
         private Random rnd;
-
-        // A character to be changed as the program runs
-        private char character;
         
-        // A list of items to be assigned to a grid spot
-        private List<Items> items;
+        // A multidimensional array of items
+        private Items[,] items;
 
-        // A string that receives all items assigned to a grid spot
-        // Used for debugging
-        private string containedItems;
-
-        // 2 char's to be switched by their bit assigned values
-        private char space, bitOp;
+        // A char to be switched by its bit assigned value
+        private char space;
 
         // Constructor
         public World(int x, int y) {
@@ -34,14 +27,9 @@ namespace _02 {
 
             rnd = new Random();
 
-            character = ' ';
-
-            items = new List<Items>();
-
-            containedItems = "";
+            items = new Items[x, y];
 
             space = (char)0x20;
-            bitOp = ' ';
         }
 
         // Creates the world according to the given coordinates
@@ -51,100 +39,51 @@ namespace _02 {
 
                 for (int j = 0; j < x; j++) {
 
-                    PopulateWorld();
+                    items[j, i] = (Items)space;
 
-                    //Debugging
-                    //FillString();
+                    PopulateSlot(j, i);
 
-                    //Debugging
-                    /* Console.WriteLine($"[{i},{j}] - Contains: {containedItems}" +
-                        $" - Character: {character}"); */
+                    // Debugging (gives a decimal value instead of the Items name)
+                    /* Console.WriteLine($"[{i},{j}] - Contains: {items[j, i]}" +
+                        $" - Character: {(char)items[j, i]}"); */
+                }
+            }
+        }
 
-                    //Debugging
-                    containedItems = "";
+        // Draws the World
+        public void RenderWorld() {
 
-                    Console.Write(character);
+            for (int i = 0; i < y; i++) {
 
-                    items.Clear();
+                for (int j = 0; j < x; j++) {
+
+                    Console.Write((char)items[i, j]);
                 }
                 Console.WriteLine();
             }
         }
 
-        public void RenderWorld() {
-
-
-        }
-
-        // Populates the world by calling 'NextDouble' 4 times in each cell
-        // If nothing gets added into the items List, an empty space is written
-        private void PopulateWorld() {
+        // Populates the world by calling 'NextDouble' 4 times in each slot
+        private void PopulateSlot(int x, int y) {
 
             if (rnd.NextDouble() <= 0.01) {
 
-                items.Add(Items.Food);
+                items[x, y] |= Items.Food;
             }
 
             if (rnd.NextDouble() <= 0.005) {
 
-                items.Add(Items.Guns);
+                items[x, y] |= Items.Guns;
             }
 
             if (rnd.NextDouble() <= 0.005) {
 
-                items.Add(Items.Enemy);
+                items[x, y] |= Items.Enemy;
             }
 
             if (rnd.NextDouble() <= 0.003) {
 
-                items.Add(Items.Trap);
-            }
-
-            if (items.Count == 0) {
-
-                character = ' ';
-                return;
-            }
-
-            VerifyItem();
-        }
-
-        // Verifies the Items added
-        // If the 'Count' of the List equals 1,
-        //  it turns the item's hex value onto its corresponding char
-        // If the 'Count' is bigger than 1, 
-        //  it makes a bitwise 'OR' operation of the items' hex values,
-        //  turning the result into the corresponding char value
-        // Finally, it adds up whatever char it has (in 'bitOp')
-        //  to the 'space' char, assigning the combined char has 'character'
-        private void VerifyItem() {
-
-            if (items.Count == 1) {
-
-                bitOp = (char)items[0];
-
-            } else if (items.Count == 2) {
-
-                bitOp = (char)(items[0] | items[1]);
-
-            } else if (items.Count == 3) {
-
-                bitOp = (char)(items[0] | items[1] | items[2]);
-
-            } else if (items.Count == 4) {
-
-                bitOp = (char)(items[0] | items[1] | items[2] | items[3]);
-            }
-
-            character = (Convert.ToChar(space + bitOp));
-        }
-
-        //Debugging
-        private void FillString() {
-
-            foreach (Items item in items) {
-
-                containedItems += $"{item} ";
+                items[x, y] |= Items.Trap;
             }
         }
     }
