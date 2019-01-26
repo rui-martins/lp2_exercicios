@@ -17,8 +17,6 @@ namespace _02 {
             World myWorld = new World(x, y);
             myWorld.CreateWorld();
             myWorld.RenderWorld();
-
-            Console.ReadKey();
         }
     }
 }
