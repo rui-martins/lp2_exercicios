@@ -15,6 +15,8 @@ namespace _02 {
             int y = Convert.ToInt32(args[1]);
 
             World myWorld = new World(x, y);
+            myWorld.CreateWorld();
+            myWorld.RenderWorld();
 
             Console.ReadKey();
         }
