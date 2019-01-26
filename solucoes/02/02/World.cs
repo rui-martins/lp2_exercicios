@@ -42,12 +42,10 @@ namespace _02 {
 
             space = (char)0x20;
             bitOp = ' ';
-
-            CreateWorld();
         }
 
         // Creates the world according to the given coordinates
-        private void CreateWorld() {
+        public void CreateWorld() {
 
             for (int i = 0; i < y; i++) {
 
@@ -71,6 +69,11 @@ namespace _02 {
                 }
                 Console.WriteLine();
             }
+        }
+
+        public void RenderWorld() {
+
+
         }
 
         // Populates the world by calling 'NextDouble' 4 times in each cell
