@@ -11,14 +11,12 @@ namespace _02 {
         // and initiates a World with the retrieved values
         static void Main(string[] args) {
 
-            Input myInput = new Input();
+            int x = Convert.ToInt32(args[0]);
+            int y = Convert.ToInt32(args[1]);
 
-            int x = myInput.GetX();
-            Console.Clear();
-            int y = myInput.GetY();
-
-            Console.Clear();
             World myWorld = new World(x, y);
+
+            Console.ReadKey();
         }
     }
 }
