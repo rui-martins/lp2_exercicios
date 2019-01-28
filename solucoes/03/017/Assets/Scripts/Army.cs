@@ -30,7 +30,7 @@ public class Army : MonoBehaviour, IUnit {
     }
 
     // Returns the average Health, by taking all the unit's health and 
-    // dividing by the total amout of units
+    // dividing by the total amount of units
     public float Health => army.Sum(unit => unit.Health) / army.Count;
 
     // Moves the army to the given position, and each unit with a relative
