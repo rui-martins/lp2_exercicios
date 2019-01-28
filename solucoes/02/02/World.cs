@@ -4,16 +4,16 @@ namespace _02 {
     class World {
 
         // World dimensions
-        private int x, y;
+        private readonly int x, y;
 
         // Random variable
         private Random rnd;
         
         // A multidimensional array of items
-        private Items[,] items;
+        private readonly Items[,] items;
 
         // A char to be switched by its bit assigned value
-        private char space;
+        private const char space = (char)0x20;
 
         // Constructor
         public World(int x, int y) {
@@ -24,8 +24,6 @@ namespace _02 {
             rnd = new Random();
 
             items = new Items[x, y];
-
-            space = (char)0x20;
         }
 
         // Creates the world according to the given coordinates
