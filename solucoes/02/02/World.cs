@@ -47,9 +47,9 @@ namespace _02 {
         // Draws the World
         public void RenderWorld() {
 
-            for (int i = 0; i < y; i++) {
+            for (int i = 0; i < x; i++) {
 
-                for (int j = 0; j < x; j++) {
+                for (int j = 0; j < y; j++) {
 
                     Console.Write((char)items[i, j]);
                 }
